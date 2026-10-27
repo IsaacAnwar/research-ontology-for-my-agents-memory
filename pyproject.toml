@@ -1,0 +1,15 @@
+[project]
+name = "kg"
+version = "0.1.0"
+description = "Experiment provenance and hypothesis graph stored in an Obsidian vault"
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6", "mcp>=2.3"]
+
+[project.scripts]
+kg = "kg.cli:main"
+kg-mcp = "kg.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
