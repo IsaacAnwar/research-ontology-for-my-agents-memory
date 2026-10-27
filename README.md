@@ -127,3 +127,7 @@ kg impact <run-or-claim>
 kg invalidate <run> --reason "val split leak"
 echo '{"kind": "claim", "statement": "...", "supports": ["run-0001"]}' | kg propose
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
