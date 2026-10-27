@@ -34,11 +34,13 @@ kg init ~/path/to/vault/experiments
 export KG_VAULT=~/path/to/vault/experiments
 ```
 
-Connect it to Claude Code:
+Connect it to your agent. The server is `kg-mcp` over stdio with `KG_VAULT` set. For Claude Code:
 
 ```bash
 claude mcp add kg -s user -e KG_VAULT=$KG_VAULT -- kg-mcp
 ```
+
+Agents working inside this repo read setup and conventions from [AGENTS.md](AGENTS.md).
 
 Open `kg.base` in Obsidian to browse claims, runs, and questions as tables.
 

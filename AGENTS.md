@@ -41,8 +41,10 @@ When the user asks to set up kg:
 1. Install: `uv tool install --reinstall .` in this repo. This puts `kg` and `kg-mcp` on PATH. Rerun it after every code change. Avoid editable installs: macOS can set the hidden flag on `.pth` files, and Python skips hidden `.pth` files.
 2. Ask the user where the graph should live. Default to a folder inside their existing Obsidian vault, for example `<vault>/experiments`. Do not create a new `.obsidian` folder.
 3. Scaffold it: `kg init <path>`.
-4. Register the MCP server at user scope:
-   `claude mcp add kg -s user -e KG_VAULT=<absolute path> -- kg-mcp`
+4. Register the MCP server with the agent you are running in. The server is the command `kg-mcp` over stdio with `KG_VAULT=<absolute path>` in its environment.
+   - Claude Code: `claude mcp add kg -s user -e KG_VAULT=<absolute path> -- kg-mcp`
+   - Codex: `codex mcp add kg --env KG_VAULT=<absolute path> -- kg-mcp`
+   - Clients configured with JSON, such as Cursor: `{"mcpServers": {"kg": {"command": "kg-mcp", "env": {"KG_VAULT": "<absolute path>"}}}}`
 5. Tell the user to export `KG_VAULT=<absolute path>` in their shell profile so the CLI finds the vault, and to open `kg.base` in Obsidian for the Claims, Runs, and Questions tables.
 
 ## Logging runs
